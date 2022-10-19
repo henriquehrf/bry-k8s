@@ -1,0 +1,2 @@
+frontend:
+  image: registry.bry.com.br/tjmt/bry-fw2-front-end@sha256:18753f0f67c28d71eee6b50086ab1339bba22c954fe7d45e220279a8c68b579b

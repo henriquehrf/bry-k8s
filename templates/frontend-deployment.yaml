@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-bry-fw2-front-end-deploy
+  labels:
+    app: {{ .Release.Name }}-bry-fw2-front-end
+    family: {{ .Release.Name }}-bry-fw2
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-bry-fw2-front-end
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}-bry-fw2-front-end
+    spec:
+      containers:
+      - name: {{ .Release.Name }}-bry-fw2-front-end
+        image: {{ .Values.frontend.image }}
+        ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP
+        resources:
+          requests:
+            memory: "32Mi"
+            cpu: "100m"
+          limits: 
+            memory: "64Mi"
+            cpu: "1"
+        livenessProbe:
+          tcpSocket:
+            port: 8080
+          initialDelaySeconds: 20
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8080
+          initialDelaySeconds: 30
+          periodSeconds: 10
+      imagePullSecrets:
+      - name: {{ .Release.Name }}-bry-fw2-docker-registry-secret
+
