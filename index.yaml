@@ -3,7 +3,7 @@ entries:
   bry-k8s:
   - apiVersion: v1
     appVersion: 1.0.0
-    created: "2022-10-19T16:02:33.8862174-04:00"
+    created: "2022-10-19T16:18:41.3927216-04:00"
     description: A Helm chart for Kubernetes
     digest: b1b575d1b4f3b1701e8601e7404779ba7570d41e1a3bb4bffe9cfad07d7adf2e
     name: bry-k8s
@@ -11,4 +11,14 @@ entries:
     urls:
     - https://henriquehrf.github.io/bry-k8s/bry-k8s-1.0.0.tgz
     version: 1.0.0
-generated: "2022-10-19T16:02:33.885149-04:00"
+  - apiVersion: v2
+    appVersion: 1.0.1
+    created: "2022-10-19T16:18:41.3921785-04:00"
+    description: A Helm chart for Kubernetes
+    digest: edc4983bf90d90d372fce671780eb849cdffd361e61563b717f7e207689537c0
+    name: bry-k8s
+    type: application
+    urls:
+    - https://henriquehrf.github.io/bry-k8s/bry-k8s-0.1.1.tgz
+    version: 0.1.1
+generated: "2022-10-19T16:18:41.3893205-04:00"
